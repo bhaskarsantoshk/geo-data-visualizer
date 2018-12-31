@@ -7,7 +7,7 @@ import processing.core.PImage;
  * A class to illustrate some use of the PApplet class
  * Used in module 3 of the UC San Diego MOOC Object Oriented Programming in Java
  * 
- * @author UC San Diego Intermediate Software Development MOOC team
+ * @author Santosh Bhaskar
  * 
  *
  */
