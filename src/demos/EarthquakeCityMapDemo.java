@@ -136,8 +136,7 @@ public class EarthquakeCityMapDemo extends PApplet {
 	    	markers.add(new SimplePointMarker(eq.getLocation(), eq.getProperties()));
 	    }
 	    map.addMarkers(markers);
-//	    
-//	    
+	    
 //	    // STAGE 4: format markers on whether "historical" or "recent"
 //	    // Here is an example of how to use Processing's color method to generate 
 //	    // an int that represents the color yellow.  
