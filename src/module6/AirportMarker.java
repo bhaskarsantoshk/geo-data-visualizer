@@ -6,7 +6,6 @@ import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.PointFeature;
 import de.fhpotsdam.unfolding.marker.SimpleLinesMarker;
 import processing.core.PGraphics;
-
 /** 
  * A class to represent AirportMarkers on a world map.
  *   
