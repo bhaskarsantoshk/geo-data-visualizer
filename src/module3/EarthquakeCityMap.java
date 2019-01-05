@@ -5,10 +5,8 @@ import java.util.ArrayList;
 //import java.util.Collections;
 //import java.util.Comparator;
 import java.util.List;
-
 //Processing library
 import processing.core.PApplet;
-
 //Unfolding libraries
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.marker.Marker;
