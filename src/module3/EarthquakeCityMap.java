@@ -78,6 +78,46 @@ public class EarthquakeCityMap extends PApplet {
 	    // earthquakes.  Then add each new SimplePointMarker to the 
 	    // List markers (so that it will be added to the map in the line below)
 	    
+	    int yellow = color(255, 255, 0);
+	    int blue = color(8, 31, 145);
+	    int red = color(221, 30, 8);
+	    
+	    // These print statements show you (1) all of the relevant properties 
+	    // in the features, and (2) how to get one property and use it
+	    if(earthquakes.size() > 0) {
+	    	PointFeature f = earthquakes.get(0);
+	    	System.out.println(f.getProperties());
+	    	Object magObj = f.getProperty("magnitude");
+	    	float mag = Float.parseFloat(magObj.toString());
+	    	// PointFeatures also have a getLocation method
+	    }
+	    
+	    for(PointFeature eq: earthquakes){
+	    	// creates the Simple Marker Object
+	    	SimplePointMarker eqmarker = createMarker(eq);
+	    	// get magnitude from Point Feature eq and convert it to float
+	    	Object magObj = eq.getProperty("magnitude");
+	    	float mag = Float.parseFloat(magObj.toString());		
+	    	// set color of markers based on magnitude and set size of radius
+	    	if (mag >= 5.0f){
+	    		eqmarker.setColor(red);
+	    		eqmarker.setRadius(10);
+	    	}
+	    	else if (mag >= 4.0f && mag < 5.0f ){
+	    		eqmarker.setColor(yellow);
+	    		eqmarker.setRadius(6);
+	    	}
+	    	else{
+	    		eqmarker.setColor(blue);
+	    		eqmarker.setRadius(3);
+	    	}
+	    	
+	    	
+	    	//adds marker to markers list
+	    	markers.add(eqmarker);
+	    	
+	    }
+	    
 	    
 	    // Add the markers to the map so that they are displayed
 	    map.addMarkers(markers);
@@ -123,7 +163,7 @@ public class EarthquakeCityMap extends PApplet {
 	}
 	
 	public void draw() {
-	    background(10);
+	    background(211);
 	    map.draw();
 	    addKey();
 	}
@@ -134,6 +174,31 @@ public class EarthquakeCityMap extends PApplet {
 	private void addKey() 
 	{	
 		// Remember you can use Processing's graphics methods here
+		// Remember you can use Processing's graphics methods here
+				// Make the box
+				fill(255, 255, 255);
+				rect(30, 100, 150, 300, 7);
+				// Make the text strings
+				textSize(12);
+				String eq_key = "Earthquake Key";
+				String mag_five = "5.0+ Magnitude";
+				String mag_four = "4.0+ Magnitude";
+				String mag_small = "Below 4.0";		
+				fill(50);
+				text(eq_key, 60, 110, 150, 150);
+				text(mag_five, 80, 150, 150, 150);
+				text(mag_four, 80, 190, 150, 150);
+				text(mag_small, 80, 230, 150, 150);
+				//make the ellipses for the key
+				//mag five
+				fill(221, 30, 8);
+				ellipse(60, 157, 10, 10);
+				//mag four
+				fill(255, 255, 0);
+				ellipse(60, 198, 6, 6);
+				//mag small
+				fill(8, 31, 145);
+				ellipse(60, 237, 3, 3);
 	
 	}
 }
